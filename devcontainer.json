@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+
+  // Share npm configuration with the host.
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.npmrc,target=/home/node/.npmrc,type=bind,consistency=cached"
+  ],
+
+  "postCreateCommand": "pnpm i",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Vue.volar",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}
