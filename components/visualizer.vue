@@ -8,7 +8,7 @@ const music = useMusicStore()
 const { width } = useWindowSize()
 const canvas = useTemplateRef('canvas')
 const ctx = shallowRef()
-const HEIGHT = 70
+const HEIGHT = 200
 
 const barWidth = computed(() => {
   if (!music.analyser) return 0
@@ -19,7 +19,7 @@ onMounted(() => {
 
   if (canvas.value) {
     canvas.value.width = width.value
-    canvas.value.height = 70
+    canvas.value.height = HEIGHT
     ctx.value = canvas.value.getContext("2d")
   }
 
@@ -38,7 +38,7 @@ onMounted(() => {
 
     x = 0;
 
-    ctx.value.clearRect(0, 0, width.value, 70);
+    ctx.value.clearRect(0, 0, width.value, HEIGHT);
     ctx.value.beginPath()
 
     const dataArray = new Uint8Array(music.analyser.frequencyBinCount)
@@ -46,7 +46,7 @@ onMounted(() => {
     music.analyser?.getByteFrequencyData(dataArray)
 
     for (let i = 0; i < music.analyser.frequencyBinCount; i+=2) {
-      barHeight = dataArray[i]/8
+      barHeight = dataArray[i]/3
 
       ctx.value.fillStyle = "rgba(0, 0, 0, .15)";
       ctx.value.beginPath();
@@ -70,7 +70,7 @@ onMounted(() => {
     <div class="grid w-full h-full">
       <div class="col-start-1 row-start-1 z-0 flex flex-col justify-center pr-[2px]">
         <div class="flex justify-between z-0">
-          <div v-for="i in 23" :key="i" class="w-2 h-[12px] rounded bg-neutral-600" />
+          <div v-for="i in 23" :key="i" class="rounded w-2 bg-neutral-600 h-[15px]" />
         </div>
       </div>
       <canvas id="canvas" ref="canvas" class="col-start-1 row-start-1 w-full h-full" />
