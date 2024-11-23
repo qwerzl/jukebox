@@ -4,11 +4,15 @@ import Lottie from 'lottie-web'
 import { useTemplateRef } from 'vue'
 import { useMusicStore } from '~/store/music'
 
-const music = useMusicStore()
+enum UserStatus {
+  Idle,
+  Walking,
+  Vehicle
+}
 
+const music = useMusicStore()
 const playbackTime = ref(0)
 const playbackDuration = ref(0)
-// const lottieReloadKey = ref(0)
 const lottieContainer = useTemplateRef('lottieContainer')
 
 useIntervalFn(() => {
@@ -23,6 +27,7 @@ useIntervalFn(() => {
 const animationData = await fetch('/walking.json').then(res => res.json())
 onMounted(() => {
   console.log(animationData)
+  if (!lottieContainer.value) return
   const lottieAnimation = Lottie.loadAnimation({
     container: lottieContainer.value,
     renderer: 'svg',
@@ -37,7 +42,7 @@ onMounted(() => {
   })
 })
 
-function secondsToTime(e) {
+function secondsToTime(e: number) {
     return `${Math.floor(e % 3600 / 60).toString().padStart(2,'0')}:${Math.floor(e % 60).toString().padStart(2,'0')}`;
 }
 </script>
@@ -45,7 +50,7 @@ function secondsToTime(e) {
 <template>
   <div class="h-screen w-screen bg-neutral-400 font-sans flex flex-col p-2">
     <div class="h-2/3 border font-bold">
-      <div class="mt-14 font-grotesk flex items-center justify-between">
+      <div class="flex mt-14 font-grotesk items-center justify-between">
         <div class="text-2xl text-black">
           Jukebox
         </div>
@@ -79,14 +84,6 @@ function secondsToTime(e) {
         <div class="w-full rounded aspect-square bg-[#FFFFFF20] grid">
           <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1 overflow-hidden">
             <div ref="lottieContainer" style="margin-top: -150px; margin-right: -80px;" class="w-[300px] h-[300px]" />
-            <!-- <Vue3Lottie
-              style="margin-top: -150px; margin-right: -80px;"
-              animation-link="/walking.json"
-              :height="300"
-              :width="300"
-              :speed="0.8 / (60 / music.bpm)"
-              :key="lottieReloadKey"
-            /> -->
           </div>
           <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5">
             <div class="flex justify-between flex-col items-start h-full">
@@ -102,7 +99,7 @@ function secondsToTime(e) {
         <div class="transition ease-in-out duration-300 w-full rounded aspect-square grid" :class="{'bg-[#FFFFFF20]': music.playing, 'bg-black': !music.playing}">
           <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1">
             <div class="w-28 h-28 rounded-full flex items-center justify-center transition ease-in-out duration-300" :class="{'bg-[#FFFFFF40]': music.playing, 'bg-white': !music.playing}">
-              <div class="w-16 h-16 rounded-full bg-white ease-in-out duration-350 transition-all flex items-center justify-center " :class="{'w-16 h-16': music.playing, 'w-28 h-28': !music.playing}">
+              <div class="w-16 h-16 rounded-full bg-white ease-in-out duration-350 transition-all flex items-center justify-center" :class="{'w-16 h-16': music.playing, 'w-28 h-28': !music.playing}">
                 <div class="rounded-full bg-orange-600 ease-in-out duration-350 transition-all" :class="{'w-0 h-0': music.playing, 'w-4 h-4': !music.playing}" />
               </div>  
             </div>
