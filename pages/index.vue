@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { useIntervalFn } from '@vueuse/core'
 import { useMusicStore  } from '~/store/music'
 
@@ -12,7 +12,7 @@ useIntervalFn(() => {
   playbackDuration.value = music.howlInstance?.duration() ?? 0
 }, 100)
 
-function secondsToTime(e: number){
+function secondsToTime(e) {
     return `${Math.floor(e % 3600 / 60).toString().padStart(2,'0')}:${Math.floor(e % 60).toString().padStart(2,'0')}`;
 }
 </script>
@@ -53,7 +53,7 @@ function secondsToTime(e: number){
         <div class="w-full rounded aspect-square bg-[#FFFFFF20] grid">
           <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1">
             <div class="w-28 h-28 rounded-full bg-[#FFFFFF40] flex items-center justify-center">
-              <div class="w-16 h-16 rounded-full bg-white "/>
+              <div class="w-16 h-16 rounded-full bg-white"/>
             </div>
           </div>
           <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5" @click="music.play()">

@@ -16,7 +16,7 @@
     "vscode": {
       "extensions": [
         "Vue.volar",
-        "bradlc.vscode-tailwindcss"
+        "-bradlc.vscode-tailwindcss"
       ]
     }
   },
