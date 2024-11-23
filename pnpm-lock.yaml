@@ -11,6 +11,9 @@ importers:
       '@nuxt/fonts':
         specifier: ^0.10.2
         version: 0.10.2(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))
+      '@nuxt/icon':
+        specifier: ^1.8.2
+        version: 1.8.2(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))(vue@3.5.13(typescript@5.7.2))
       '@nuxtjs/ionic':
         specifier: ^0.15.1
         version: 0.15.1(magicast@0.3.5)(rollup@4.27.3)(vue@3.5.13(typescript@5.7.2))
@@ -26,9 +29,15 @@ importers:
       howler:
         specifier: ^2.2.4
         version: 2.2.4
+      lottie-web:
+        specifier: ^5.12.2
+        version: 5.12.2
       nuxt:
         specifier: latest
         version: 3.14.1592(@parcel/watcher@2.5.0)(@types/node@22.9.2)(eslint@9.15.0(jiti@2.4.0))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.27.3)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))
+      realtime-bpm-analyzer:
+        specifier: ^4.0.2
+        version: 4.0.2
       vue:
         specifier: latest
         version: 3.5.13(typescript@5.7.2)
@@ -787,11 +796,19 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
+  '@iconify/collections@1.0.486':
+    resolution: {integrity: sha512-E/xw5Vku+QD/eHa89W6FYSIf+ljqiBOTSAZ+dg0dCg7Wj65qZoxfp/LJBC6EZV4J2jfPS3PVOFfyxqiK4iYrkg==}
+
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@iconify/utils@2.1.33':
     resolution: {integrity: sha512-jP9h6v/g0BIZx0p7XGJJVtkVnydtbgTgt9mVNcGDYwaa7UhdHdI9dvoq+gKj9sijMSJKxUPEG2JyjsgXjxL7Kw==}
+
+  '@iconify/vue@4.2.0-dev.2':
+    resolution: {integrity: sha512-fHsLaBaegrXyshUR2j9sV4TXkTgRQ9FhQ9PIqWgW/dFTPcMe2uEtUr1H9XQaDTpN8F9chnVqhLH8FT9asTDaSQ==}
+    peerDependencies:
+      vue: '>=3'
 
   '@ionic/cli-framework-output@2.2.8':
     resolution: {integrity: sha512-TshtaFQsovB4NWRBydbNFawql6yul7d5bMiW1WYYf17hd99V6xdDdk3vtF51bw6sLkxON3bDQpWsnUc9/hVo3g==}
@@ -961,6 +978,9 @@ packages:
 
   '@nuxt/fonts@0.10.2':
     resolution: {integrity: sha512-WYsrKBv9tPEgEntNwe4Zov2taKO/cnct+tR/g5EQ1jgADkFeEGkfCsUDwTG/pZFkW0FlKSR/KRLMB3U6O+C6Ow==}
+
+  '@nuxt/icon@1.8.2':
+    resolution: {integrity: sha512-7Ua8ER44zhe1Qn4pXAwW3GgakRf2VN9gqyltQWpyuq49NJuIG0fLcJRHRCbQi/6HPwlB4uj+e2FCDf6cDwFmRA==}
 
   '@nuxt/kit@3.14.1592':
     resolution: {integrity: sha512-r9r8bISBBisvfcNgNL3dSIQHSBe0v5YkX5zwNblIC2T0CIEgxEVoM5rq9O5wqgb5OEydsHTtT2hL57vdv6VT2w==}
@@ -4249,6 +4269,9 @@ packages:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
     engines: {node: '>= 14.16.0'}
 
+  realtime-bpm-analyzer@4.0.2:
+    resolution: {integrity: sha512-F4PLzZ0KzDvkOg4C5YeTM7VJjrDakMpBNI3uRz3tOq+HDXW/p/pwuDXs6KB7EUpiiLwSQrlRIptugofeBTeGNA==}
+
   redis-errors@1.2.0:
     resolution: {integrity: sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==}
     engines: {node: '>=4'}
@@ -5832,6 +5855,10 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
+  '@iconify/collections@1.0.486':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/types@2.0.0': {}
 
   '@iconify/utils@2.1.33':
@@ -5845,6 +5872,11 @@ snapshots:
       mlly: 1.7.3
     transitivePeerDependencies:
       - supports-color
+
+  '@iconify/vue@4.2.0-dev.2(vue@3.5.13(typescript@5.7.2))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.13(typescript@5.7.2)
 
   '@ionic/cli-framework-output@2.2.8':
     dependencies:
@@ -6265,6 +6297,28 @@ snapshots:
       - rollup
       - supports-color
       - vite
+
+  '@nuxt/icon@1.8.2(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))(vue@3.5.13(typescript@5.7.2))':
+    dependencies:
+      '@iconify/collections': 1.0.486
+      '@iconify/types': 2.0.0
+      '@iconify/utils': 2.1.33
+      '@iconify/vue': 4.2.0-dev.2(vue@3.5.13(typescript@5.7.2))
+      '@nuxt/devtools-kit': 1.6.1(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))
+      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.27.3)
+      consola: 3.2.3
+      local-pkg: 0.5.1
+      mlly: 1.7.3
+      ohash: 1.1.4
+      pathe: 1.1.2
+      std-env: 3.8.0
+      tinyglobby: 0.2.10
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - vite
+      - vue
 
   '@nuxt/kit@3.14.1592(magicast@0.3.5)(rollup@4.27.3)':
     dependencies:
@@ -10336,6 +10390,8 @@ snapshots:
       picomatch: 2.3.1
 
   readdirp@4.0.2: {}
+
+  realtime-bpm-analyzer@4.0.2: {}
 
   redis-errors@1.2.0: {}
 

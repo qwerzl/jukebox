@@ -3,7 +3,8 @@ import { defineConfig } from 'unocss'
 export default defineConfig({
   theme: {
     fontFamily: {
-      sans: 'Host Grotesk',
+      sans: 'Inter',
+      grotesk: 'Host Grotesk',
     },
   },
 })
