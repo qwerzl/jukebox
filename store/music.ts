@@ -1,4 +1,5 @@
 import { Howl, Howler } from 'howler'
+import { createRealTimeBpmProcessor, getBiquadFilter } from 'realtime-bpm-analyzer'
 
 export const useMusicStore = defineStore('websiteStore', {
     state: () => ({
@@ -8,9 +9,13 @@ export const useMusicStore = defineStore('websiteStore', {
       src: undefined as undefined | MediaElementAudioSourceNode,
       description: '',
       dataArray: undefined as undefined | Uint8Array,
+      realtimeAnalyzerNode: undefined as undefined | AudioWorkletNode,
+      lowpass: undefined as undefined | BiquadFilterNode,
+      bpm: 135,
+      playing: false,
     }),
     actions: {
-      init() {
+      async init() {
         this.howlInstance = new Howl({
           src: ['/badguy.flac'],
           html5: true
@@ -19,22 +24,34 @@ export const useMusicStore = defineStore('websiteStore', {
         this.analyser = Howler.ctx.createAnalyser()
         this.analyser.fftSize = 256
         Howler.masterGain.connect(this.analyser)
-        // this.analyser.connect(Howler.ctx.destination)
+        this.realtimeAnalyzerNode = await createRealTimeBpmProcessor(Howler.ctx)
+        this.lowpass = getBiquadFilter(Howler.ctx)
       },
-      play() {
+      async play() {
         console.log("play")
+        this.playing = true
         if (!this.howlInstance) {
-          this.init()
+          await this.init()
         }
         this.howlInstance?.play()
         // @ts-expect-error
         const node = this.howlInstance?._sounds[0]._node
         const sound_node = Howler.ctx.createMediaElementSource(node)
         sound_node.connect(this.analyser!)
-        this.analyser!.connect(Howler.ctx.destination)
+        this.analyser!.connect(Howler.ctx.destination)        
+        sound_node.connect(this.lowpass!).connect(this.realtimeAnalyzerNode!)
+        sound_node.connect(Howler.ctx.destination);
+        this.realtimeAnalyzerNode!.port.onmessage = (event) => {
+          if (event.data.message === 'BPM') {
+            if (event.data.data.bpm[0].tempo != 0) {
+              this.bpm = event.data.data.bpm[0].tempo
+            }
+          }
+        }
       },
       pause() {
         this.howlInstance?.pause()
+        this.playing = false
       },
 
     }
