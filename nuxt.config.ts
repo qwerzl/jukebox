@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/ionic',
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    '@pinia/nuxt'
   ],
   ssr: false
 })

@@ -1,4 +1,20 @@
 <script lang="ts" setup>
+import { useIntervalFn } from '@vueuse/core'
+import { useMusicStore  } from '~/store/music'
+
+const music = useMusicStore()
+
+const playbackTime = ref(0)
+const playbackDuration = ref(0)
+
+useIntervalFn(() => {
+  playbackTime.value = music.howlInstance?.seek() ?? 0
+  playbackDuration.value = music.howlInstance?.duration() ?? 0
+}, 100)
+
+function secondsToTime(e: number){
+    return `${Math.floor(e % 3600 / 60).toString().padStart(2,'0')}:${Math.floor(e % 60).toString().padStart(2,'0')}`;
+}
 </script>
 
 <template>
@@ -9,10 +25,10 @@
     </div>
     <div class="text-xl flex justify-between">
       <div>
-        01:12
+        {{ secondsToTime(playbackTime) }}
       </div>
       <div class="text-[#FFFFFF80]">
-        03:14
+        {{ secondsToTime(playbackDuration)}}
       </div>
     </div>
     <div class="pb-10 border">
@@ -40,7 +56,7 @@
               <div class="w-16 h-16 rounded-full bg-white "/>
             </div>
           </div>
-          <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5">
+          <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5" @click="music.play()">
             <div class="flex justify-between flex-row items-end">
               <div class="text-black text-lg">
                 ON
