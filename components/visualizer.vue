@@ -6,9 +6,9 @@ import { useMusicStore  } from '~/store/music'
 const music = useMusicStore()
 
 const { width } = useWindowSize()
-const canvas = useTemplateRef('canvas')
+const canvas = useTemplateRef<HTMLCanvasElement>('canvas')
 const ctx = shallowRef()
-const HEIGHT = 200
+const HEIGHT = 150
 
 const barWidth = computed(() => {
   if (!music.analyser) return 0
@@ -46,7 +46,7 @@ onMounted(() => {
     music.analyser?.getByteFrequencyData(dataArray)
 
     for (let i = 0; i < music.analyser.frequencyBinCount; i+=2) {
-      barHeight = dataArray[i]/3
+      barHeight = dataArray[i]/4
 
       ctx.value.fillStyle = "rgba(0, 0, 0, .15)";
       ctx.value.beginPath();
@@ -68,12 +68,12 @@ onMounted(() => {
 <template>
   <div id="content">
     <div class="grid w-full h-full">
-      <div class="col-start-1 row-start-1 z-0 flex flex-col justify-center pr-[2px]">
-        <div class="flex justify-between z-0">
+      <div class="col-start-1 row-start-1 flex flex-col justify-center pr-[2px]">
+        <div class="flex justify-between">
           <div v-for="i in 23" :key="i" class="rounded w-2 bg-neutral-600 h-[15px]" />
         </div>
       </div>
-      <canvas id="canvas" ref="canvas" class="col-start-1 row-start-1 w-full h-full" />
+      <canvas id="canvas" ref="canvas" class="col-start-1 row-start-1 w-full h-full z-0" />
     </div>
   </div>
 </template>
