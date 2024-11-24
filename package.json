@@ -10,6 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@capacitor/android": "6.2.0",
+    "@capacitor/app": "6.0.2",
+    "@capacitor/core": "6.2.0",
+    "@capacitor/haptics": "6.0.2",
+    "@capacitor/ios": "6.2.0",
+    "@capacitor/keyboard": "6.0.3",
+    "@capacitor/status-bar": "6.0.2",
     "@nuxt/fonts": "^0.10.2",
     "@nuxt/icon": "^1.8.2",
     "@nuxtjs/ionic": "^0.15.1",
@@ -26,6 +33,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",
+    "@capacitor/cli": "6.2.0",
     "@types/howler": "^2.2.12",
     "@unocss/eslint-plugin": "^0.64.1",
     "@unocss/nuxt": "^0.64.1",

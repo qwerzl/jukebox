@@ -8,6 +8,27 @@ importers:
 
   .:
     dependencies:
+      '@capacitor/android':
+        specifier: 6.2.0
+        version: 6.2.0(@capacitor/core@6.2.0)
+      '@capacitor/app':
+        specifier: 6.0.2
+        version: 6.0.2(@capacitor/core@6.2.0)
+      '@capacitor/core':
+        specifier: 6.2.0
+        version: 6.2.0
+      '@capacitor/haptics':
+        specifier: 6.0.2
+        version: 6.0.2(@capacitor/core@6.2.0)
+      '@capacitor/ios':
+        specifier: 6.2.0
+        version: 6.2.0(@capacitor/core@6.2.0)
+      '@capacitor/keyboard':
+        specifier: 6.0.3
+        version: 6.0.3(@capacitor/core@6.2.0)
+      '@capacitor/status-bar':
+        specifier: 6.0.2
+        version: 6.0.2(@capacitor/core@6.2.0)
       '@nuxt/fonts':
         specifier: ^0.10.2
         version: 0.10.2(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.2)(terser@5.36.0))
@@ -51,6 +72,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^3.9.2
         version: 3.9.2(@typescript-eslint/utils@8.15.0(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2))(@unocss/eslint-plugin@0.64.1(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2)
+      '@capacitor/cli':
+        specifier: 6.2.0
+        version: 6.2.0
       '@types/howler':
         specifier: ^2.2.12
         version: 2.2.12
@@ -268,6 +292,16 @@ packages:
     resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
     engines: {node: '>=6.9.0'}
 
+  '@capacitor/android@6.2.0':
+    resolution: {integrity: sha512-3YIDPylV0Q2adEQ/H568p496QdYG0jK/XGMdx7OGSqdBZen92ciAsYdyhLtyl91UVsN1lBhDi5H6j3T2KS6aJg==}
+    peerDependencies:
+      '@capacitor/core': ^6.2.0
+
+  '@capacitor/app@6.0.2':
+    resolution: {integrity: sha512-SiGTGgslK4TbWJVImCUL1odul7/YFkVfkYtAYS9AAEzQpxBECBeRnuN3FFBcfZ9eiN1XxFBFchhiwpxtx/c7yQ==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+
   '@capacitor/cli@6.2.0':
     resolution: {integrity: sha512-EWcXG39mZh35zrHhOqzN1ILeSyMRyEqWVtQDXqMGjCXYRH6b6p5TvyvLDN8ZNy26tbhI3i79gfrgirt+mNwuuw==}
     engines: {node: '>=18.0.0'}
@@ -275,6 +309,26 @@ packages:
 
   '@capacitor/core@6.2.0':
     resolution: {integrity: sha512-B9IlJtDpUqhhYb+T8+cp2Db/3RETX36STgjeU2kQZBs/SLAcFiMama227o+msRjLeo3DO+7HJjWVA1+XlyyPEg==}
+
+  '@capacitor/haptics@6.0.2':
+    resolution: {integrity: sha512-xcFdIH4iIIeW2+1lzmlYMVicqB9ytaiuZ9NE3a9laKFPvMGC7hdj6i6tHFezwPJ/96xkHOwXT2b0F8Mh9xtTWg==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+
+  '@capacitor/ios@6.2.0':
+    resolution: {integrity: sha512-gisvZBIrKT1siiumgpLPY63HmJe69Ed/dOmfQQ+U1MIJmOR5gWGWvfO7QSj/FMatVZS4Xt/8jCoUgzDD1U6kSw==}
+    peerDependencies:
+      '@capacitor/core': ^6.2.0
+
+  '@capacitor/keyboard@6.0.3':
+    resolution: {integrity: sha512-V/mURxBI68HvClYjrGBlOriWkwYN7r+cWid/igJz/3scNc/V81DgQ9fpoLr4W0I5NY7YxOesjIJLuLO+LT18mQ==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+
+  '@capacitor/status-bar@6.0.2':
+    resolution: {integrity: sha512-AmRIX6QvFemItlY7/69ARkIAqitRQqJ2qwgZmD1KqgFb78pH+XFXm1guvS/a8CuOOm/IqZ4ddDbl20yxtBqzGA==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
 
   '@capsizecss/metrics@2.2.0':
     resolution: {integrity: sha512-DkFIser1KbGxWyG2hhQQeCit72TnOQDx5pr9bkA7+XlIy7qv+4lYtslH3bidVxm2qkY2guAgypSIPYuQQuk70A==}
@@ -5511,6 +5565,14 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
+  '@capacitor/android@6.2.0(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
+  '@capacitor/app@6.0.2(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
   '@capacitor/cli@6.2.0':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
@@ -5536,6 +5598,22 @@ snapshots:
   '@capacitor/core@6.2.0':
     dependencies:
       tslib: 2.8.1
+
+  '@capacitor/haptics@6.0.2(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
+  '@capacitor/ios@6.2.0(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
+  '@capacitor/keyboard@6.0.3(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
+  '@capacitor/status-bar@6.0.2(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
 
   '@capsizecss/metrics@2.2.0': {}
 

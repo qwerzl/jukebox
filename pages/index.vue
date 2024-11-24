@@ -81,7 +81,7 @@ function secondsToTime(e: number) {
 </script>
 
 <template>
-  <div class="h-screen w-screen bg-neutral-400 font-sans flex flex-col p-2">
+  <ion-page class="h-screen w-screen bg-neutral-400 font-sans flex flex-col p-2">
     <div class="h-2/3 border font-bold">
       <div class="flex mt-14 font-grotesk items-center justify-between">
         <div class="text-2xl text-black">
@@ -166,5 +166,5 @@ function secondsToTime(e: number) {
         </div>
       </div>
     </div>
-  </div>
+  </ion-page>
 </template>

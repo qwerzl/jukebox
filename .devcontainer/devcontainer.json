@@ -20,6 +20,15 @@
       ]
     }
   },
+
+  "features": {
+    "ghcr.io/devcontainers-extra/features/ionic-cli:2": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "version": "latest"
+    }
+  },
   
   "appPort": 3000
 }
