@@ -11,5 +11,16 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon'
   ],
+
+  vite: {
+    server: {
+      watch: {
+        ignored: [
+          '**/ios/**',
+          '**/android/**'
+        ],
+      }
+    }
+  },
   ssr: false
 })

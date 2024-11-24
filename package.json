@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "dev:ios": "bash ./scripts/ios-dev.sh",
+    "dev:android": "bash ./scripts/android-dev.sh"
   },
   "dependencies": {
     "@capacitor/android": "6.2.0",
@@ -40,5 +42,8 @@
     "eslint": "^9.14.0",
     "typescript": "^5.7.2",
     "unocss": "^0.64.1"
+  },
+  "resolutions": {
+    "chokidar": "^3"
   }
 }
