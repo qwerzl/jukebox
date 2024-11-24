@@ -11,13 +11,13 @@ export const useMusicStore = defineStore('websiteStore', {
       dataArray: undefined as undefined | Uint8Array,
       realtimeAnalyzerNode: undefined as undefined | AudioWorkletNode,
       lowpass: undefined as undefined | BiquadFilterNode,
-      bpm: 135,
+      bpm: 110,
       playing: false,
     }),
     actions: {
       async init() {
         this.howlInstance = new Howl({
-          src: ['/badguy.flac'],
+          src: ['/chihiro.mp3'],
           html5: true
         })
         this.context = Howler.ctx
@@ -28,13 +28,12 @@ export const useMusicStore = defineStore('websiteStore', {
         this.lowpass = getBiquadFilter(Howler.ctx)
       },
       async play() {
-        console.log("play")
         this.playing = true
         if (!this.howlInstance) {
           await this.init()
         }
         this.howlInstance?.play()
-        // @ts-expect-error
+        // @ts-expect-error TS2339
         const node = this.howlInstance?._sounds[0]._node
         const sound_node = Howler.ctx.createMediaElementSource(node)
         sound_node.connect(this.analyser!)
