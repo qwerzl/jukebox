@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@nuxt/fonts',
     '@pinia/nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@vueuse/motion/nuxt'
   ],
 
   vite: {

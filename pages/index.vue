@@ -69,7 +69,7 @@ function secondsToTime(e: number) {
         }"
         @click="songLiked = !songLiked"
       >
-        <Icon name=material-symbols:favorite size="0.4em" />
+        <Icon name=material-symbols:favorite size="0.4em" :class="{ 'text-white': songLiked }" />
       </div>
     </div>
   </ion-page>
