@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useIntervalFn , onLongPress } from '@vueuse/core'
+import { useIntervalFn } from '@vueuse/core'
 import { useTemplateRef } from 'vue'
 import { Vue3Lottie } from 'vue3-lottie'
 import { useMusicStore } from '~/store/music'
@@ -8,8 +8,6 @@ const music = useMusicStore()
 const playbackTime = ref(0)
 const playbackDuration = ref(0)
 const songLiked = ref(false)
-
-const playPauseContainer = useTemplateRef<HTMLElement>('playPauseContainer')
 
 useIntervalFn(() => {
   playbackTime.value = music.howlInstance?.seek() ?? 0
@@ -39,8 +37,8 @@ function secondsToTime(e: number) {
       </div>
       <SongInfo class="mt-8 z-18" />
     </div>
-    <Visualizer class="w-full h-[150px] z-10" style="margin-top: -10px;"/>
-    <div class="text-xl flex justify-between font-grostek font-medium -mt-10 z-20">
+    <Visualizer class="w-full h-[150px] z-10" style="margin-top: -20px;"/>
+    <div class="text-xl flex justify-between font-grotesk font-medium -mt-10 z-20">
       <div>
         {{ secondsToTime(playbackTime) }}
       </div>

@@ -7,6 +7,7 @@ const music = useMusicStore()
 
 const { width } = useWindowSize()
 const canvas = useTemplateRef<HTMLCanvasElement>('canvas')
+const progressIndicator = useTemplateRef<HTMLDivElement[]>('progressIndicator')
 const ctx = shallowRef()
 const HEIGHT = 150
 
@@ -28,6 +29,29 @@ onMounted(() => {
 
   // ctx.filter = 'url(#remove-alpha)';
   ctx.value.translate(0.5, 0.5)
+
+  useIntervalFn(() => {
+    if (!music.howlInstance || !progressIndicator.value) {
+      return
+    }
+
+    const durationPerSection = music.howlInstance.duration() / 23
+    let tmpTime = 0
+
+    for (const i of progressIndicator.value) {
+      if (tmpTime > music.howlInstance.seek()) {
+        i.style.backgroundColor = '#525252'
+      } 
+      else if (tmpTime + durationPerSection > music.howlInstance.seek()) {
+        const prog = Math.trunc((music.howlInstance.seek() - tmpTime) / durationPerSection * 100) 
+        i.style.background = `linear-gradient(90deg, #262626 ${prog}%, #525252 ${prog}%)`
+      }
+      else {
+        i.style.backgroundColor = '#262626'
+      }
+      tmpTime += durationPerSection
+    }
+  }, 100)
 
   function renderFrame() {
     requestAnimationFrame(renderFrame)
@@ -70,7 +94,7 @@ onMounted(() => {
     <div class="grid w-full h-full">
       <div class="col-start-1 row-start-1 flex flex-col justify-center pr-[2px]">
         <div class="flex justify-between">
-          <div v-for="i in 23" :key="i" class="rounded w-2 bg-neutral-600 h-[15px]" />
+          <div v-for="i in 23" :key="i" class="rounded w-2 h-[15px] z-10" ref="progressIndicator" />
         </div>
       </div>
       <canvas id="canvas" ref="canvas" class="col-start-1 row-start-1 w-full h-full z-0" />

@@ -9,7 +9,7 @@
     <div class="text-4xl text-neutral-600">
       by Billie Eilish
     </div> -->
-    <img src="/Billie_Eilish_-_Hit_Me_Hard_and_Soft.png" class="w-50 h-50 rounded drop-shadow-2xl">
+    <img src="/albumcover.png" class="w-50 h-50 rounded drop-shadow-2xl shadow-xl border border-2">
     <div class="flex flex-row w-full font-grotesk z-50 mt-2">
       <div class="h-25 w-full grid">
         <div class="col-start-1 row-start-1 flex items-center text-black h-full w-full justify-center">
@@ -17,7 +17,7 @@
             <div class="text-3xl text-neutral-800">
               CHIHIRO
             </div>
-            <div class="text-neutral-800">
+            <div class="text-neutral-700 font-sans font-normal">
               Billie Eilish - HIT ME HARD AND SOFT
             </div>
           </div>
