@@ -17,24 +17,28 @@ useIntervalFn(() => {
 function secondsToTime(e: number) {
     return `${Math.floor(e % 3600 / 60).toString().padStart(2,'0')}:${Math.floor(e % 60).toString().padStart(2,'0')}`;
 }
+
+const ionRouter = useIonRouter()
 </script>
 
 <template>
   <ion-page class="h-screen w-screen bg-neutral-400 font-sans flex flex-col p-2">
     <div class="border font-bold">
-      <div class="flex mt-12 font-grotesk items-center justify-between">
-        <div class="text-2xl text-black">
-          Jukebox
-        </div>
-        <div class="flex flex-row space-x-2">
-          <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center">
-            <Icon name="material-symbols:area-chart-outline-rounded" size="1.2em" class="text-black"/>
+      <ion-header class="shadow-none">
+        <div class="flex mt-12 font-grotesk items-center justify-between">
+          <div class="text-2xl text-black">
+            Jukebox
           </div>
-          <div class="w-10 h-10 rounded bg-black flex justify-center items-center">
-            <Icon name="material-symbols:account-circle" size="1.2em" class="text-white"/>
+          <div class="flex flex-row space-x-2">
+            <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center">
+              <Icon name="material-symbols:area-chart-outline-rounded" size="1.2em" class="text-black"/>
+            </div>
+            <div class="w-10 h-10 rounded bg-black flex justify-center items-center">
+              <Icon name="material-symbols:account-circle" size="1.2em" class="text-white"/>
+            </div>
           </div>
         </div>
-      </div>
+      </ion-header>
       <SongInfo class="mt-8 z-18" />
     </div>
     <Visualizer class="w-full h-[150px] z-10" style="margin-top: -20px;"/>
@@ -53,7 +57,7 @@ function secondsToTime(e: number) {
       </div>
     </div>
     <div class="pb-12 font-grotesk flex flex-row space-x-2 justify-between">
-      <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center py-2">
+      <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center py-2" @click="ionRouter.navigate('/settings', 'forward')">
         <Icon name=material-symbols:settings size="0.4em" />
       </div>
       <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center">
