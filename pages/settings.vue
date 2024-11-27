@@ -15,7 +15,7 @@
         <div class="mt-6 text-black text-sm ml-1">
           Algorithm
         </div>
-        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20" @click="router.navigate('/settings-scenario', 'forward')">
+        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20 active:bg-[#00000020]" @click="router.navigate('/settings-scenario', 'forward')">
           <div class="h-10 flex items-center justify-between px-2 py-2">
             <div>
               Algorithm Settings

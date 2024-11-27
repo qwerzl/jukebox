@@ -40,13 +40,13 @@ export const useMusicStore = defineStore('websiteStore', {
         this.analyser!.connect(Howler.ctx.destination)        
         sound_node.connect(this.lowpass!).connect(this.realtimeAnalyzerNode!)
         sound_node.connect(Howler.ctx.destination);
-        this.realtimeAnalyzerNode!.port.onmessage = (event) => {
-          if (event.data.message === 'BPM') {
-            if (event.data.data.bpm[0].tempo !== 0) {
-              this.bpm = event.data.data.bpm[0].tempo
-            }
-          }
-        }
+        // this.realtimeAnalyzerNode!.port.onmessage = (event) => {
+        //   if (event.data.message === 'BPM') {
+        //     if (event.data.data.bpm[0].tempo !== 0) {
+        //       this.bpm = event.data.data.bpm[0].tempo
+        //     }
+        //   }
+        // }
       },
       pause() {
         this.howlInstance?.pause()

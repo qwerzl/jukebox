@@ -57,7 +57,7 @@ const ionRouter = useIonRouter()
       </div>
     </div>
     <div class="pb-12 font-grotesk flex flex-row space-x-2 justify-between">
-      <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center py-2" @click="ionRouter.navigate('/settings', 'forward')">
+      <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center py-2 active:bg-[#FFFFFF40]" @click="ionRouter.navigate('/settings', 'forward')">
         <Icon name=material-symbols:settings size="0.4em" />
       </div>
       <div class="text-4xl text-black flex-1 bg-[#FFFFFF20] rounded flex items-center justify-center">
