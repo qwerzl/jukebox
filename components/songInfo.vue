@@ -62,7 +62,7 @@ watch(() => music.playing, async () => {
     if (pop.initial)
       await apply(pop.initial)
   }
-})
+}, { immediate: true })
 
 </script>
 

@@ -24,14 +24,14 @@ const ionRouter = useIonRouter()
 <template>
   <ion-page class="h-screen w-screen bg-neutral-400 font-sans flex flex-col p-2">
     <div class="border font-bold">
-      <ion-header class="shadow-none">
+      <ion-header>
         <div class="flex mt-12 font-grotesk items-center justify-between">
           <div class="text-2xl text-black">
             Jukebox
           </div>
           <div class="flex flex-row space-x-2">
-            <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center">
-              <Icon name="material-symbols:area-chart-outline-rounded" size="1.2em" class="text-black"/>
+            <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center" @click="ionRouter.navigate('/social', 'forward')">
+              <Icon name="ic:sharp-people-alt" size="1.2em" class="text-black"/>
             </div>
             <div class="w-10 h-10 rounded bg-black flex justify-center items-center">
               <Icon name="material-symbols:account-circle" size="1.2em" class="text-white"/>

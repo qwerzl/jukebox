@@ -3,9 +3,9 @@
     <ion-header class="shadow-none p-2">
       <div class="border font-bold">
         <div class="flex mt-12 font-grotesk items-center justify-start">
-          <Icon name="material-symbols:arrow-back-ios-new" size="1.5em" class="text-black" @click="router.navigate('/', 'back', 'replace')" />
+          <Icon name="material-symbols:arrow-back-ios-new" size="1.5em" class="text-black" @click="router.navigate('/', 'back')" />
           <div class="text-2xl text-black ml-1">
-            Settings
+            Friends
           </div>
         </div>
       </div>
@@ -13,9 +13,9 @@
     <ion-content>
       <div class="px-2">
         <div class="mt-6 text-black text-sm ml-1">
-          Algorithm
+          Scenarios
         </div>
-        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20" @click="router.navigate('/settings-scenario', 'forward')">
+        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
           <div class="h-10 flex items-center justify-between px-2 py-2">
             <div>
               Scenario Settings
