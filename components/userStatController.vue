@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full aspect-square overflow-hidden">
+  <div class="w-full aspect-square overflow-hidden rounded">
     <div class="w-full rounded bg-[#b1b1b1] grid transition-all ease-in-out duration-300 origin-bottom-left z-30" :class="{'aspect-square': userStatus === UserStatus.Walking, 'aspect-[2/1] mb-1': userStatus === UserStatus.Idle}" @click="switchStatus()">
-      <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1 overflow-hidden z-30">
+      <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1 overflow-hidden z-30 rounded overflow-hidden">
         <div ref="lottieContainer" :style="lottieContainerStyle" />
       </div>
       <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5">
