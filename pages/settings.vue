@@ -18,13 +18,7 @@
         <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20" @click="router.navigate('/settings-scenario', 'forward')">
           <div class="h-10 flex items-center justify-between px-2 py-2">
             <div>
-              Scenario Settings
-            </div>
-            <Icon name="material-symbols:chevron-forward" class="text-black" />
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Algorithms Management
+              Algorithm Settings
             </div>
             <Icon name="material-symbols:chevron-forward" class="text-black" />
           </div>
