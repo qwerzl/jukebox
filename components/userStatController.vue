@@ -1,16 +1,16 @@
 <template>
   <div class="w-full aspect-square overflow-hidden rounded">
-    <div class="w-full rounded bg-[#b1b1b1] grid transition-all ease-in-out duration-300 origin-bottom-left z-30" :class="{'aspect-square': userStatus === UserStatus.Walking, 'aspect-[2/1] mb-1': userStatus === UserStatus.Idle}" @click="switchStatus()">
+    <div class="w-full rounded bg-[#b1b1b1] grid transition-all ease-in-out duration-300 origin-bottom-left z-30" :class="{'aspect-square': userStatus === UserStatus.Walking || userStatus === UserStatus.Vehicle, 'aspect-[2/1] mb-1': userStatus === UserStatus.Idle}" @click="switchStatus()">
       <div class="w-full h-full flex items-center justify-center col-start-1 row-start-1 overflow-hidden z-30 rounded overflow-hidden">
         <div ref="lottieContainer" :style="lottieContainerStyle" />
       </div>
       <div class="h-full w-full col-start-1 row-start-1 flex justify-end flex-col px-2 py-0.5">
         <div class="flex justify-between flex-col-reverse items-start h-full">
           <div class="text-black text-lg">
-            {{ userStatus === UserStatus.Walking ? 'Walking' : 'Idle' }}
+            {{ userStatus === UserStatus.Walking ? 'Walking' : userStatus === UserStatus.Idle ? 'Idle' : 'In Vehicle' }}
           </div>
           <div class="text-neutral-600 transition-all ease-in-out duration-300" :class="{'opacity-0': userStatus === UserStatus.Idle, 'opacity-100': userStatus === UserStatus.Walking}">
-            {{ music.bpm }} BPM
+            {{ userStatus === UserStatus.Walking ? `${music.bpm} BPM` : '' }}
           </div>
         </div>
       </div>
@@ -71,9 +71,12 @@ function switchStatus() {
           break
         case IdleLocation.Starbucks:
           idleLocation.value = IdleLocation.Home
-          userStatus.value = UserStatus.Walking
+          userStatus.value = UserStatus.Vehicle
           break
       }
+      break
+    case UserStatus.Vehicle:
+      userStatus.value = UserStatus.Walking
       break
   }
 }
@@ -92,6 +95,9 @@ onMounted(() => {
           break
         case UserStatus.Idle:
           path = '/sitting.json'
+          break
+        case UserStatus.Vehicle:
+          path = '/driving.json'
           break
       }
       return await fetch(path)
@@ -116,6 +122,12 @@ onMounted(() => {
         marginRight: '-80px',
         width: '250px',
         height: '250px',
+      },
+      {
+        marginTop: '-100px',
+        marginRight: '-200px',
+        width: '400px',
+        height: '400px',
       }
     ][userStatus.value as number]
     switch (userStatus.value) {
@@ -153,7 +165,7 @@ onMounted(() => {
     idleLottieContainerStyle.value = [
       {
         marginTop: '0px',
-        marginLeft: '120px',
+        marginLeft: '100px',
         width: '150px',
         height: '150px'
       },
@@ -165,7 +177,7 @@ onMounted(() => {
       },
       {
         marginTop: '-30px',
-        marginLeft: '100px',
+        marginLeft: '70px',
         width: '180px',
         height: '180px',
       }

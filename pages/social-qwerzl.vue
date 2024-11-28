@@ -15,7 +15,7 @@
         <div class="text-sm text-black/70 text-xs w-full flex justify-end mr-6">
           This one is good 👍
         </div>
-        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1  divide-black/20 flex-row-reverse">
+        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 divide-black/20 flex-row-reverse">
           <div class="h-15 flex items-center justify-between px-2 py-2 font-sans flex-row-reverse">
             <div class="items-center flex space-x-2 flex-row-reverse">
               <img src="/gnx.png" class="h-10 w-10 rounded border border-b-coolGray bg-white">
