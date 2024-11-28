@@ -12,123 +12,79 @@
     </ion-header>
     <ion-content>
       <div class="px-2">
-        <div class="mt-6 text-black text-sm ml-1">
-          Scenarios
+        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20 active:bg-[#00000020]" @click="router.navigate('/social-qwerzl', 'forward')">
+          <div class="h-15 flex items-center justify-between px-2 py-2 font-sans">
+            <div class="items-center flex space-x-2">
+              <img src="/qwerzl.jpg" class="h-10 w-10 rounded border border-b-coolGray bg-white">
+              <div class="flex flex-col">
+                <div class="text-sm font-medium">
+                  qwerzl
+                </div>
+                <div class="text-black/40 text-[0.6rem]">
+                  Last seen 2 hours ago
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row space-x-1 items-center text-sm">
+              <Icon name="material-symbols:chevron-forward" class="text-black" />
+            </div>
+          </div>
         </div>
         <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Scenario Settings
-            </div>
-            <Icon name="material-symbols:chevron-forward" class="text-black" />
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Algorithms Management
-            </div>
-            <Icon name="material-symbols:chevron-forward" class="text-black" />
-          </div>
-        </div>
-        <div class="mt-6 text-black text-sm ml-1">
-          Community
-        </div>
-        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Allow Friend Requests
+          <div class="h-15 flex items-center justify-between px-2 py-2 font-sans">
+            <div class="items-center flex space-x-2">
+              <img src="/lzz.png" class="h-10 w-10 rounded border border-b-coolGray bg-white">
+              <div class="flex flex-col">
+                <div class="text-sm font-medium">
+                  .
+                </div>
+                <div class="text-black/40 text-[0.6rem]">
+                  Last seen 4 hours ago
+                </div>
+              </div>
             </div>
             <div class="flex flex-row space-x-1 items-center text-sm">
-              <div>
-                Yes
-              </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
+              <Icon name="material-symbols:chevron-forward" class="text-black" />
             </div>
           </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Your Status
-            </div>
-            <div class="flex flex-row space-x-1 items-center text-sm">
-              <div class="w-3 h-3 rounded-full bg-green-600" />
-              <div>
-                Online
-              </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
-            </div>
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Notification Settings
-            </div>
-            <Icon name="material-symbols:chevron-forward" class="text-black" />
-          </div>
-        </div>
-        <div class="mt-6 text-black text-sm ml-1">
-          Application
         </div>
         <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Theme
-            </div>
-            <div class="flex flex-row space-x-1 items-center text-sm">
-              <div>
-                Automatic
+          <div class="h-15 flex items-center justify-between px-2 py-2 font-sans">
+            <div class="items-center flex space-x-2">
+              <img src="/sjt.png" class="h-10 w-10 rounded border border-b-coolGray bg-white">
+              <div class="flex flex-col">
+                <div class="text-sm font-medium">
+                  Robin
+                </div>
+                <div class="text-black/40 text-[0.6rem]">
+                  Online
+                </div>
               </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
-            </div>
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Auto Play Music
             </div>
             <div class="flex flex-row space-x-1 items-center text-sm">
-              <div>
-                Yes
-              </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
-            </div>
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Last.fm Settings
-            </div>
-            <div class="flex flex-row space-x-1 items-center text-sm">
-              <div>
-                Not Connected
-              </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
-            </div>
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Check Updates
-            </div>
-            <div class="flex flex-row space-x-1 items-center text-sm">
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
+              <Icon name="material-symbols:chevron-forward" class="text-black" />
             </div>
           </div>
         </div>
         <div class="mt-6 text-black text-sm ml-1">
-          Privacy
+          Recommended Friends
         </div>
         <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Send Anonymous Statistics
+          <div class="h-15 flex items-center justify-between px-2 py-2 font-sans">
+            <div class="items-center flex space-x-2">
+              <img src="/colin.png" class="h-10 w-10 rounded border border-b-coolGray bg-white">
+              <div class="flex flex-col">
+                <div class="text-sm font-medium">
+                  Colin
+                </div>
+                <div class="text-black/40 text-[0.6rem]">
+                  You both listen to: Billie Eilish
+                </div>
+              </div>
             </div>
             <div class="flex flex-row space-x-1 items-center text-sm">
-              <div>
-                Yes
-              </div>
-              <Icon name="material-symbols:chevron-forward" size="1.2em" class="text-black text-normal" />
+              <Icon name="material-symbols:chevron-forward" class="text-black" />
             </div>
-          </div>
-          <div class="h-10 flex items-center justify-between px-2 py-2">
-            <div>
-              Privacy Policy
-            </div>
-            <Icon name="material-symbols:chevron-forward" class="text-black" />
           </div>
         </div>
       </div>

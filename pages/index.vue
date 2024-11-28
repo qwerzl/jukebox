@@ -30,7 +30,7 @@ const ionRouter = useIonRouter()
             Jukebox
           </div>
           <div class="flex flex-row space-x-2">
-            <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center" @click="ionRouter.navigate('/social', 'forward')">
+            <div class="w-10 h-10 rounded bg-[#FFFFFF20] flex justify-center items-center active:bg-[#FFFFFF30]" @click="ionRouter.navigate('/social', 'forward')">
               <Icon name="ic:sharp-people-alt" size="1.2em" class="text-black"/>
             </div>
             <div class="w-10 h-10 rounded bg-black flex justify-center items-center">

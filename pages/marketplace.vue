@@ -346,7 +346,7 @@
         <div class="mt-6 text-black text-sm ml-1">
           Categories
         </div>
-        <div class="rounded-lg bg-[#00000030] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20 h-20 animate-pulse"/>
+        <div class="rounded-lg bg-[#00000030] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20 h-60 animate-pulse"/>
       </div>
     </ion-content>
   </ion-page>

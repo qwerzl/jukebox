@@ -17,7 +17,7 @@
             Scenarios
           </div>
         </div>
-        <div class="rounded-lg bg-[#00000010] w-full grid font-grotesk divide-y-2 grid-cols-1 mt-1 divide-black/20">
+        <div class="w-full font-grotesk rounded-lg bg-[#00000010] grid divide-y-2 grid-cols-1 mt-1 divide-black/20">
           <div class="h-10 flex items-center justify-between px-2 py-2">
             <div class="flex items-center space-x-1">
               <div class="rounded text-sm bg-neutral-5/50 px-1">
